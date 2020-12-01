@@ -17,8 +17,6 @@ namespace DevTeamsProject
             _devTeamsDirectory.Add(devTeam);
         }
 
-
-
         //DevTeam Read
 
         public List<DevTeam> GetAllDevTeams()

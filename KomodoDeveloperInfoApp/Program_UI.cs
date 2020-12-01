@@ -161,7 +161,13 @@ namespace KomodoDeveloperInfoApp
 
         private void ViewAllDeveloperTeams()
         {
-            
+            Console.Clear();
+            List<DevTeam> devTeams = _devTeamRepo.GetAllDevTeams();
+            foreach (var devTeam in devTeams)
+            {
+                DisplayDevTeamInfo(devTeam);
+                Console.WriteLine("*************************");
+            }
         }
 
         private void CreateNewDeveloperTeam()
@@ -280,7 +286,7 @@ namespace KomodoDeveloperInfoApp
         public void DisplayDeveloperInfo(Developer developer)
         {
             Console.WriteLine($"Devloper ID: {developer.DeveloperID}\n" +
-                $"Developer Name{developer.DeveloperName}\n" +
+                $"Developer Name: {developer.DeveloperName}\n" +
                 $"{developer.AccessToPluralsight}"
                 );
         }
@@ -343,7 +349,7 @@ namespace KomodoDeveloperInfoApp
             _devRepo.CreateNewDeveloper(charles);
 
             DevTeam bebop = new DevTeam("Bebop", 1);
-            DevTeam straightAhead = new DevTeam("straightAhead", 2);
+            DevTeam straightAhead = new DevTeam("Straight Ahead", 2);
 
             _devTeamRepo.CreateNewDevTeam(bebop);
             _devTeamRepo.CreateNewDevTeam(straightAhead);
